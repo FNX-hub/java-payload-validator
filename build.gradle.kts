@@ -8,8 +8,6 @@ sonar {
     properties {
         property("sonar.projectKey", "FNX-hub_java-payload-validator")
         property("sonar.organization", "fnx-hub")
-        property("sonar.sources", "src/main")
-        property("sonar.tests", "src/test")
     }
 }
 
