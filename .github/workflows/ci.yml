@@ -25,7 +25,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # necessary for Sonar
+                    fetch-depth: 0  # necessary for Sonar
 
       # --- Setup JDK ---
       - name: Set up JDK
@@ -58,9 +58,13 @@ jobs:
 
       # --- Build & Test ---
       - name: Build & Run Tests
+        run: ./gradlew build jacocoTestReport --info
+
+      # --- SonarQube Analysis ---
+      - name: SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build jacocoTestReport sonar --info
+        run: ./gradlew sonar --info
 
       # --- Upload Test Reports ---
       - name: Upload Test Reports
