@@ -1,5 +1,6 @@
 plugins {
     id("java-library")
+    id("jacoco")
 }
 
 group = "org.fnx.hub"
@@ -52,4 +53,13 @@ tasks.test {
             project.configurations.testRuntimeClasspath.get().files.first { it.name.startsWith("mockito-core") }
         }"
     )
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
 }
