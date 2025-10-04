@@ -64,7 +64,7 @@ jobs:
       - name: SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew sonar --info
+        run: ./gradlew build sonar --info
 
       # --- Upload Test Reports ---
       - name: Upload Test Reports
