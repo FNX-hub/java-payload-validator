@@ -1,7 +1,10 @@
-# java-payload-validator
+# java-payload-validator 
 
 [![Build Status](https://github.com/FNX-hub/java-payload-validator/actions/workflows/ci.yml/badge.svg)](https://github.com/FNX-hub/java-payload-validator/actions)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=FNX-hub_java-payload-validator)](https://sonarcloud.io/summary/new_code?id=FNX-hub_java-payload-validator)
 [![codecov](https://codecov.io/github/FNX-hub/java-payload-validator/graph/badge.svg?token=ALEIL0GDDW)](https://codecov.io/github/FNX-hub/java-payload-validator)
+
+---
 
 java-payload-validator is a lightweight Java library to validate payloads (e.g. JSON) using annotations and dynamic
 proxies. It provides:
@@ -123,7 +126,7 @@ Register/resolve it through your `ValidatorResolver` so the interceptor can find
 ### Commit messages
 
 Please follow the Conventional Commits specification for commit messages to keep history consistent and enable automated
-release tooling.Please follow the Conventional Commits specification for commit messages to keep history consistent and enable automated release tooling.
+release tooling.
 
 ```conventionalcommit
 <type>(<scope>): <short description>
