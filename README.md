@@ -1,5 +1,8 @@
 # java-payload-validator
 
+[![Build Status](https://github.com/FNX-hub/java-payload-validator/actions/workflows/ci.yml/badge.svg)](https://github.com/FNX-hub/java-payload-validator/actions)
+[![codecov](https://codecov.io/github/FNX-hub/java-payload-validator/graph/badge.svg?token=ALEIL0GDDW)](https://codecov.io/github/FNX-hub/java-payload-validator)
+
 java-payload-validator is a lightweight Java library to validate payloads (e.g. JSON) using annotations and dynamic
 proxies. It provides:
 
@@ -36,13 +39,13 @@ proxies. It provides:
 
 To build the project:
 
-```
+```shell
 ./gradlew clean build
 ```
 
 To run tests:
 
-```
+```shell
 ./gradlew test
 ```
 
@@ -63,9 +66,7 @@ public interface MyService {
 Object payload = ...; // your payload object
 MyService target = new MyServiceImpl();
 MyService proxy = ValidationProxyFactory.createProxy(MyService.class, target);
-proxy.
-
-process(payload); // validation runs automatically
+proxy.process(payload); // validation runs automatically
 ```
 
 3. Implement a custom `PayloadValidator`:
@@ -121,14 +122,15 @@ Register/resolve it through your `ValidatorResolver` so the interceptor can find
 
 ### Commit messages
 
-Please follow the Conventional Commits specification for commit messages to keep history consistent and enable automated release tooling.
+Please follow the Conventional Commits specification for commit messages to keep history consistent and enable automated
+release tooling.Please follow the Conventional Commits specification for commit messages to keep history consistent and enable automated release tooling.
 
-Basic format:
-```
+```conventionalcommit
 <type>(<scope>): <short description>
 ```
 
 Common types:
+
 - feat: a new feature
 - fix: a bug fix
 - docs: documentation only changes
@@ -139,6 +141,7 @@ Common types:
 - chore: build process or auxiliary tool changes
 
 Examples:
+
 - feat(api): add schema-based validation for incoming requests
 - fix(interceptor): handle null payload gracefully
 - docs(readme): update usage examples
