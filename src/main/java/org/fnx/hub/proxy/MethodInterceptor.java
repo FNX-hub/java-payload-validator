@@ -15,7 +15,7 @@ import java.util.Map;
  * choose to not invoke the original method at all.
  */
 @FunctionalInterface
-//@SuppressWarnings("java:S112")
+@SuppressWarnings("java:S112")
 public interface MethodInterceptor {
   Object invoke(
       Object target,
