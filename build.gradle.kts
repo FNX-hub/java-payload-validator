@@ -1,13 +1,15 @@
 plugins {
     id("java-library")
     id("jacoco")
-    id("org.sonarqube") version "6.3.1.5724"
+    id("org.sonarqube") version "latest.release"
 }
 
 sonar {
     properties {
         property("sonar.projectKey", "FNX-hub_java-payload-validator")
         property("sonar.organization", "fnx-hub")
+        property("sonar.sources", "src/main")
+        property("sonar.tests", "src/test")
     }
 }
 
