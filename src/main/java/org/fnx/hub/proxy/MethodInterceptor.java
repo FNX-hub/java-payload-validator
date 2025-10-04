@@ -15,7 +15,7 @@ import java.util.Map;
  * choose to not invoke the original method at all.
  */
 @FunctionalInterface
-//@SuppressWarnings("java:S112") // insert smell for ci tests purposes
+@SuppressWarnings("java:S112")
 public interface MethodInterceptor {
   Object invoke(
       Object target,
