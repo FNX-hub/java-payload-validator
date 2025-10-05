@@ -1,5 +1,14 @@
 plugins {
     id("java-library")
+    id("jacoco")
+    id("org.sonarqube") version "latest.release"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "FNX-hub_java-payload-validator")
+        property("sonar.organization", "fnx-hub")
+    }
 }
 
 group = "org.fnx.hub"
@@ -52,4 +61,13 @@ tasks.test {
             project.configurations.testRuntimeClasspath.get().files.first { it.name.startsWith("mockito-core") }
         }"
     )
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
 }
