@@ -1,0 +1,56 @@
+name: "🐞 Bug Report"
+description: Report a reproducible bug or unexpected behavior in java-payload-validator
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!  
+        Please complete the form below so we can reproduce and fix the issue quickly.
+  - type: input
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: Short and clear description of the issue
+      placeholder: Validation fails when using nested JSON payloads
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps or code snippets to reproduce the issue
+      placeholder: |
+        1. Build the project with `./gradlew build`
+        2. Run validation with input XYZ
+        3. Observe the incorrect behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: What should happen instead?
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      placeholder: What actually happens?
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS: [e.g. Ubuntu 22.04]
+        - Java version: [e.g. 21]
+        - Gradle version: [e.g. 8.10]
+        - Validator version: [e.g. 1.2.0]
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues for duplicates
+          required: true
+        - label: I have included logs, stack traces, or relevant payloads
+          required: false

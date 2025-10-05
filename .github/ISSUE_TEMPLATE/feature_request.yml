@@ -1,0 +1,35 @@
+name: "💡 Feature Request"
+description: Suggest a new idea or enhancement for java-payload-validator
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement!  
+        Please describe your idea clearly to help us understand the motivation and impact.
+  - type: input
+    id: title
+    attributes:
+      label: Feature Summary
+      placeholder: Add support for JSON Schema draft 2020-12
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this feature needed? What problem does it solve?
+      placeholder: Current validation fails for advanced schema constructs.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: How do you imagine this feature working?
+      placeholder: Extend the payload parser to handle the latest schema format.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
